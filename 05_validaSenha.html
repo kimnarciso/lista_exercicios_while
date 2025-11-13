@@ -6,10 +6,19 @@
     */
 
     //ENTRADA
+    let senha = Number(prompt(`Informe a senha composta por 4 números inteiros:`))
 
+    let quantidade = String(senha).length;
+
+    while (isNaN(senha) || quantidade !== 4 || senha % 1 !== 0) {
+        alert(`Senha Incorreta!`)
+        senha = Number(prompt(`Informe a senha composta por 4 números inteiros:`))
+
+        quantidade = String(senha).length;
+    }
 
     //PROCESSAMENTO
-
+    alert (`Senha Correta!`)
 
     //SAÍDA
 
