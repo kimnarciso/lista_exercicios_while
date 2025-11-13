@@ -6,11 +6,19 @@
     */
 
     //ENTRADA
-
+    let paisA = 80000;
+    let paisB = 200000;
+    let anos = 0;
 
     //PROCESSAMENTO
-
+    while (paisA < paisB) {
+        paisA = paisA + (paisA * 0.03);
+        paisB = paisB + (paisB * 0.015); 
+        anos++;
+    }
 
     //SAÍDA
-
+    document.write(`Serão necessários: ${anos} anos<br>`);
+    document.write(`<br>População final do país A: ${paisA.toFixed()}<br>`);
+    document.write(`<br>População final do país B: ${paisB.toFixed()}<br>`);
 </script>
