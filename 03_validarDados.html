@@ -11,19 +11,102 @@
     */
 
     //ENTRADA
-    let nome = prompt (`Informe um nome que contenha mais de 3 caracteres:`).trim()
+
     
-    //PROCESSAMENTO
+    //-----NOME-----//
+
+    let nome = prompt(`Informe um nome que contenha mais de 3 caracteres:`).trim()
+
     let array = []
     array.push(nome)
     let soletrar = Array.from(`${array}`)
     let quantidade = soletrar.length;
 
-    //SAÍDA
+    while (!isNaN(nome) || quantidade <= 3) {
+        alert(`Nome inválido! Tente novamente!`)
+        nome = prompt(`Informe um nome que contenha mais de 3 caracteres:`).trim()
 
-    //-----NOME-----//
-    while (!isNaN(nome) || quantidade < 3) {
-        alert (`Nome inválido! Tente novamente!`)
-        nome = prompt (`Informe um nome que contenha mais de 3 caracteres:`).trim()
+        array = []
+        array.push(nome)
+        soletrar = Array.from(`${array}`)
+        quantidade = soletrar.length;
     }
+
+    //-----IDADE-----//
+
+    let idade = Number(prompt(`Informe a idade:`))
+
+    while (isNaN(idade) || idade < 0 || idade > 150) {
+        alert(`Idade Inválida! Tente novamente!`)
+        idade = Number(prompt(`Informe a idade:`))
+    }
+
+    //-----SALÁRIO-----//
+
+    let salario = Number(prompt(`Informe seu salário:`))
+
+    while (isNaN(salario) || salario < 0) {
+        alert(`Salário inválido!`)
+        salario = Number(prompt(`Informe seu salário:`))
+    }
+
+    //-----SEXO-----//
+
+    let sexo = prompt(`Informe seu gênero F para feminino e M para masculino:`).trim().toUpperCase()
+
+    while (sexo !== "F" && sexo !== "M") {
+        alert(`Gênero inválido!`)
+        sexo = prompt(`Informe seu gênero F para feminino e M para masculino:`).trim().toUpperCase()
+    }
+
+    //-----ESTADO CIVIL-----//
+
+    let estadoCivil = prompt (`Informe seu Estado Civil "S" para solteiro(a), "C" para casado(a), "V" para viúvo(a) e "D" para divorciado(a):`).trim().toUpperCase()
+
+    while (estadoCivil !== "S" && estadoCivil !== "C" && estadoCivil !== "V" && estadoCivil !== "D") {
+    alert (`Estado Civil inválido!`) 
+    estadoCivil = prompt (`Informe seu Estado Civil "S" para solteiro(a), "C" para casado(a), "V" para viúvo(a) e "D" para divorciado(a):`).trim().toUpperCase() }
+
+    //PROCESSAMENTO
+    if (sexo == "F") {
+        sexo = "Feminino"
+    } else {
+        sexo = "Masculino"
+    }
+
+    if (estadoCivil == "S") {
+        if (sexo == "Feminino") {
+            estadoCivil = "Solteira"
+        } else {
+            estadoCivil = "Solteiro"
+        }
+    } else if (estadoCivil == "C") {
+        if (sexo == "Feminino") {
+            estadoCivil = "Casada"
+        } else {
+            estadoCivil = "Casado"
+        }
+    } else if (estadoCivil == "V") {
+        if (sexo == "Feminino") {
+            estadoCivil = "Viúva"
+        } else {
+            estadoCivil = "Viúvo"
+        }
+        
+    } else {
+        if (sexo == "Feminino") {
+            estadoCivil = "Divorciada"
+        } else {
+            estadoCivil = "Divorciado"
+        }
+    }
+    //SAÍDA
+    alert (`Nome: ${nome}.
+Idade: ${idade}.
+Salário: R$${salario.toFixed(2)}.
+Gênero: ${sexo}.
+Estado Civil: ${estadoCivil}.
+    `)
+ 
+    
 </script>
