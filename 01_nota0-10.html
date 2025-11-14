@@ -8,7 +8,11 @@
     //ENTRADA
     let numero = Number(prompt(`Informe uma nota entre 0 e 10:`))
     while (isNaN(numero) || numero < 0 || numero > 10) {
-        alert (`Valor inválido! Insira novamente!`)
+        if (isNaN(numero)) {
+            alert(`Valor inválido! Digite somente números!`)
+        } else {
+            alert(`Valor inválido! A nota deve estar entre 0 e 10!`)
+        }
         numero = Number(prompt(`Informe uma nota entre 0 e 10:`))
     }
 
