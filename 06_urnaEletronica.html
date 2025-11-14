@@ -20,10 +20,26 @@
     */
 
     //ENTRADA
-
-
+    let voto = 1
     //PROCESSAMENTO
+    while (voto > 0) {
+    voto = Number (prompt(`As opções são:
+1. Candidato Joãozinho
+2. Candidato Mariazinha
+3. Nulo
+4. Branco
+Entre com o seu voto:`))
 
+while (isNaN(voto)) {
+    alert (`Voto incorreto!`)
+    voto = Number (prompt(`As opções são:
+1. Candidato Joãozinho
+2. Candidato Mariazinha
+3. Nulo
+4. Branco
+Entre com o seu voto:`))
+}
+    }
 
     //SAÍDA
 
