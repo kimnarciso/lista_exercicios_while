@@ -23,7 +23,12 @@
     let quantidade = soletrar.length;
 
     while (!isNaN(nome) || quantidade <= 3) {
-        alert(`Nome inválido! Tente novamente!`)
+        if (!isNaN(nome)) {
+            alert(`Nome inválido! Tente novamente!`)
+        } else {
+            alert(`Nome deve conter mais de 3 caracteres! Tente novamente!`)
+        }
+
         nome = prompt(`Informe um nome que contenha mais de 3 caracteres:`).trim()
 
         array = []
@@ -36,8 +41,14 @@
 
     let idade = Number(prompt(`Informe a idade:`))
 
-    while (isNaN(idade) || idade < 0 || idade > 150) {
-        alert(`Idade Inválida! Tente novamente!`)
+    while (isNaN(idade) || idade < 0 || idade > 150 || idade % 1 != 0) {
+        if (isNaN(idade)) {
+            alert(`Idade inválida! Digite somente números!`)
+        } else if (idade < 0 || idade > 150) {
+            alert(`Idade inválida! Deve estar entre 0 e 150 anos!`)
+        } else {
+            alert(`Idade inválida! Digite somente números inteiros!`)
+        }
         idade = Number(prompt(`Informe a idade:`))
     }
 
@@ -46,7 +57,11 @@
     let salario = Number(prompt(`Informe seu salário:`))
 
     while (isNaN(salario) || salario < 0) {
-        alert(`Salário inválido!`)
+        if (isNaN(salario)) {
+            alert(`Salário inválido! Digite somente números!`)
+        } else {
+            alert(`Salário inválido! Deve ser maior que zero!`)
+        }
         salario = Number(prompt(`Informe seu salário:`))
     }
 
