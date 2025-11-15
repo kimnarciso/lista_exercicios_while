@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //Problema: Fibonacci
     /*
@@ -6,10 +7,22 @@
 
     //ENTRADA
 
+    let n = Number(prompt("Quantos termos?"))
+
+let a = 0
+let b = 1
+let contador = 3
 
     //PROCESSAMENTO
+    while (contador <= n) {
+    let c = a + b
 
+    a = b
+    b = c
+
+    contador++
+}
 
     //SAÍDA
-    
+    alert(`O ${n}º termo da sequência de Fibonacci é: ${b}`)
 </script>
