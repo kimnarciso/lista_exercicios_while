@@ -5,11 +5,20 @@
     */
     
     //ENTRADA
-
+    let soma = 0
+    let numero = 1
+    while (numero != 0) {
+        numero = Number(prompt(`Informe um número (Digite 0 para parar):`))
+        while (isNaN(numero)) {
+            alert(`Número inválido! Digite somente números!`)
+            numero = Number(prompt(`Informe um número (Digite 0 para parar):`))
+        }
+        soma += numero
+    }
 
     //PROCESSAMENTO
 
 
     //SAÍDA
-    
+    alert(`A soma total é: ${soma.toFixed(2)}`)
 </script>
