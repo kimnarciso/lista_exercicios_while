@@ -9,11 +9,26 @@
     */
 
     //ENTRADA
+    let numero = Number(prompt(`Informe um número inteiro para inventer:`))
+    while (isNaN(numero) || numero % 1 != 0 || numero < 0) {
+        if (isNaN(numero)) {
+            alert(`Número inválido! Digite somente números!`)
+        } else if (numero % 1 != 0) {
+            alert(`Número inválido! Digite somente números inteiros!`)
+        } else {
+            alert(`Número inválido! Digite um número maior que 0!`)
+        } 
+        numero = Number(prompt(`Informe um número inteiro para inventer:`))
+    }
 
-
+    let invertido = 0
     //PROCESSAMENTO
-
+    while (numero > 0) {
+        let separar = numero % 10
+        invertido = invertido * 10 + separar 
+        numero = Math.floor(numero / 10)
+    }
 
     //SAÍDA
-
+    alert(`O número invertido é: ${invertido}`)
 </script>
