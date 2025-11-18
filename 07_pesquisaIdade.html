@@ -49,11 +49,11 @@
         listaIdade.push(idade)
 
         //----------SEXO----------//
-        let sexo = prompt(`Informe o sexo M para Masculino e F para Feminino:`).toUpperCase()
+        let sexo = prompt(`Informe o sexo M para Masculino e F para Feminino:`).trim().toUpperCase()
 
         while (sexo != "M" && sexo != "F") {
             alert(`Gênero inválido! Digite M ou F!`)
-            sexo = prompt(`Informe o sexo M para Masculino e F para Feminino:`).toUpperCase()
+            sexo = prompt(`Informe o sexo M para Masculino e F para Feminino:`).trim().toUpperCase()
         }
 
         pessoas++
